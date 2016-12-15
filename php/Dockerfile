@@ -21,10 +21,19 @@ VOLUME /run/php
 RUN \
     apt-get update -qq && \
     apt-get install --no-install-recommends -y \
+        locales \
         php-cli \
         sudo \
     && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# set locales
+RUN echo "de_DE.UTF-8 UTF-8" >> /etc/locale.gen && \
+    echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && \
+    locale-gen
+ENV LC_ALL=en_US.UTF-8
+ENV LANG=en_US.UTF-8
+ENV LANGUAGE=en_US.UTF-8
 
 # Set up the application directory
 VOLUME ["/app"]
