@@ -2,9 +2,9 @@
 FROM tsari/jessie-php-fpm
 MAINTAINER Tibor Sári <tiborsari@gmx.de>
 
-ENV COMPOSER_VERSION 1.2.4
+ENV COMPOSER_VERSION 1.3.0
 
-RUN curl -S --insecure -o /usr/local/bin/composer https://getcomposer.org/download/$COMPOSER_VERSION/composer.phar
+RUN curl -sS --insecure -o /usr/local/bin/composer https://getcomposer.org/download/$COMPOSER_VERSION/composer.phar
 RUN chmod +x /usr/local/bin/composer
 
 # Set up the application directory
