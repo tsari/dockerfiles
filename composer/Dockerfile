@@ -6,7 +6,7 @@ FROM tsari/jessie-php-fpm
 #FROM tsari/wheezy-apache-php
 MAINTAINER Tibor Sári <tiborsari@gmx.de>
 
-ENV COMPOSER_VERSION 1.4.2
+ENV COMPOSER_VERSION 1.5.1
 
 RUN curl -sS --insecure -o /usr/local/bin/composer https://getcomposer.org/download/$COMPOSER_VERSION/composer.phar
 RUN chmod +x /usr/local/bin/composer
